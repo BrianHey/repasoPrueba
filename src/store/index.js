@@ -5,11 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+
   },
   mutations: {
+
   },
   actions: {
+    agregarProducto(context, dataProducto) {
+      console.log("bien", dataProducto);
+    }
   },
-  modules: {
-  }
 })
