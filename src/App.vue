@@ -3,7 +3,7 @@
   <div id="nav">
     <router-link to="/">Home</router-link>|
     <router-link to="/about">About</router-link>
-    <router-link :to="{name:'Inventario'}"> Inventario</router-link>
+    <router-link :to="{name:'Inventario'}">Inventario</router-link>
   </div>
   <b-alert show>Default Alert</b-alert>
   <router-view />
