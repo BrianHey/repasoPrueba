@@ -5,14 +5,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    productos: [
-
-    ]
-
+    productos: [],
+    pokemones: [],
+    nombre: 'Bruce',
+    last: 'Lee',
   },
   mutations: {
     AGREGAR_PRODUCTO(state, payload) {
-      state.productos.push(payload);
+      state.productos.push(payload)
+    },
+    GET_POKEMONES(state, payload) {
+      state.pokemones = payload
     },
   },
   actions: {
@@ -26,6 +29,16 @@ export default new Vuex.Store({
       commit('AGREGAR_PRODUCTO', dataProducto)
 
       console.log('bien', dataProducto)
+    },
+
+    getPokemones({ commit }, payload) {
+      commit('GET_POKEMONES', payload)
+    },
+  },
+
+  getters: {
+    fullNames: (state) => {
+      return `${state.nombre} ${state.last}`
     },
   },
 })
