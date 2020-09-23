@@ -4,10 +4,15 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    productos: [
+
+    ]
+
+  },
   mutations: {
     AGREGAR_PRODUCTO(state, payload) {
-      alert(payload.nombre)
+      state.productos.push(payload);
     },
   },
   actions: {
