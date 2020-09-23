@@ -1,33 +1,43 @@
 <template>
 <div>
-  <b-form-input v-model="producto.nombre" id="input-1" type="email" required placeholder="Ingrese nombre producto"></b-form-input>
+  <b-form-input v-model="nombre"></b-form-input>
 
-  <b-form-input v-model="producto.precio" id="input-2" required placeholder="Ingrese Precio Producto"></b-form-input>
+  <b-form-input v-model="precio"></b-form-input>
 
-  <b-form-input v-model="producto.stock" id="input-2" required placeholder="Ingrese Stock Producto"></b-form-input>
+  <b-form-input v-model="stock"></b-form-input>
 
-  <b-button @click="agregarProducto(producto)" variant="primary">Submit</b-button>
+  <b-button @click="enviarProducto" variant="primary">Submit</b-button>
+  <p v-for="producto in misProductos">{{producto}}</p>
 </div>
 </template>
 
 <script>
 import {
-  mapActions
+  mapActions,
+  mapState
 } from "vuex";
 export default {
   name: "Home",
-  components: {},
   data() {
     return {
-      producto: {
-        nombre: "",
-        precio: "",
-        stock: "",
-      },
+      nombre: "",
+      precio: "",
+      stock: "",
     };
   },
   methods: {
     ...mapActions(["agregarProducto"]),
+    enviarProducto() {
+      let miProducto = {
+        nombre: this.nombre,
+        precio: this.precio,
+        stock: this.stock,
+      };
+      this.agregarProducto(miProducto);
+    },
+  },
+  computed: {
+    ...mapState(["misProductos"]),
   },
 };
 </script>

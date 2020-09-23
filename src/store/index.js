@@ -5,14 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    productos: [],
+    misProductos: [],
     pokemones: [],
     nombre: 'Bruce',
     last: 'Lee',
   },
   mutations: {
     AGREGAR_PRODUCTO(state, payload) {
-      state.productos.push(payload)
+      state.misProductos.push(payload)
     },
     GET_POKEMONES(state, payload) {
       state.pokemones = payload

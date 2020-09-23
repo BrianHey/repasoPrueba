@@ -2,23 +2,21 @@
 <div>
   <h1>Inventario</h1>
 
-  <b-table striped hover :items="productos"></b-table>
-
+  <b-table striped hover :items="misProductos"></b-table>
 </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import {
+  mapState
+} from "vuex";
 export default {
   name: "Inventario",
-  
+
   computed: {
-    ...mapState([
-      'productos'
-    ])
+    ...mapState(["misProductos"]),
   },
 };
-
 </script>
 
 <style>
